@@ -1,0 +1,11 @@
+# 04 Faça um Programa que peça as 4 notas bimestrais e mostre a média
+
+# Entradas
+print("Informe as 4 notas bimestrais: ")
+notas = [int(input()) for x in range(4)]
+
+# Processamento
+media = sum(notas)/len(notas)
+
+# Saídas
+print("A média das notas bimestrais é: ", media)
