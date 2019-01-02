@@ -1,0 +1,11 @@
+# 05 Faça um Programa que converta metros para centímetros.
+
+# Entradas
+print("Informe a medida em metros: ", end = "")
+metros = float(input())
+
+# Processamento
+centimetros = metros * 100
+
+# Saídas
+print (metros, " metro(s) equivale(m) a ",centimetros, " centimetro(s)")
