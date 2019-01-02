@@ -1,0 +1,11 @@
+# 03 Faça um Programa que peça dois números e imprima a soma.
+
+# Entradas
+print("Informe o primeiro número: ", end="")
+x = int(input())
+
+print("Informe o segundo número: ", end="")
+y = int(input())
+
+# Saídas
+print("A soma dos números é: ",x+y)
