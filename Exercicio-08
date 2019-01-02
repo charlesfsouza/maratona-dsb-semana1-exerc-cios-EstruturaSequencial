@@ -1,0 +1,14 @@
+#08 Faça um Programa que pergunte quanto você ganha por hora e o número de horas trabalhadas no mês.
+# Calcule e mostre o total do seu salário no referido mês.
+
+# Entradas
+print("Informe o valor/hora: ",end="")
+vlr_hora = float(input())
+print("Informe o total de horas trabalhadas no mês: ",end="")
+horas = float(input())
+
+# Processamento
+vlr_mes = vlr_hora*horas
+
+# Saídas
+print('O valor totao do seu salário é R$ {:.2f}'.format(vlr_mes))
