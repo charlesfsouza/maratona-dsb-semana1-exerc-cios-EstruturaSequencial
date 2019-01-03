@@ -1,0 +1,33 @@
+#Faça um Programa que pergunte quanto você ganha por hora e o número de horas trabalhadas no mês.
+# Calcule e mostre o total do seu salário no referido mês, sabendo-se que são descontados
+# 11% para o Imposto de Renda, 8% para o INSS e 5% para o sindicato, faça um programa que nos dê:
+#salário bruto.
+#quanto pagou ao INSS.
+#quanto pagou ao sindicato.
+#o salário líquido.
+#calcule os descontos e o salário líquido, conforme a tabela abaixo:
+#+ Salário Bruto : R$
+#- IR (11%) : R$
+#- INSS (8%) : R$
+#- Sindicato ( 5%) : R$
+#= Salário Liquido : R$
+#Obs.: Salário Bruto - Descontos = Salário Líquido.
+
+# Entradas
+print("Informe quanto você ganha por hora: ", end = "")
+sal_hora = float(input())
+print("Informe quantas horas você trabalha por mês: ", end = "")
+ch = float(input())
+
+# Processamento
+sal_bruto = sal_hora * ch
+IR = sal_bruto * 0.11
+INSS = sal_bruto * 0.08
+sind = sal_bruto * 0.05
+sal_liq = sal_bruto - (IR + INSS + sind)
+
+# Saídas
+print("Salário bruto = ",'{:.2f}'.format(sal_bruto))
+print("Desconto INSS = ",'{:.2f}'.format(INSS))
+print("Desconto sindicato = ",'{:.2f}'.format(sind))
+print("Salário líquido = ",'{:.2f}'.format(sal_liq))
