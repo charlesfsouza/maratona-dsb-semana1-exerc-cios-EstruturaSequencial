@@ -1,0 +1,24 @@
+# 11 - Faça um Programa que peça 2 números inteiros e um número real. Calcule e mostre:
+# o produto do dobro do primeiro com metade do segundo .
+# a soma do triplo do primeiro com o terceiro.
+# o terceiro elevado ao cubo.
+
+# Entradas
+print("Informe o primeiro número real: ", end="")
+n1 = float(input())
+
+print("Informe o segundo número real: ", end="")
+n2 = float(input())
+
+print("Informe o número inteiro: ", end="")
+n3 = int(input())
+
+# Processamento
+c1 = (2*n1)*(n2/2)
+c2 = 3*n1 + n3
+c3 = n3**3
+
+#Saídas
+print("O produto do dobro de ", n1, " com metade de ", n2, " é: ", c1)
+print("A soma do triplo de ", n1," com ", n3, " é: ", c2)
+print(n3, " elevado ao cubo é: ", c3)
