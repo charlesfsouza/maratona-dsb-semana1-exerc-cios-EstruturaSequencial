@@ -1,0 +1,14 @@
+#Tendo como dados de entrada a altura de uma pessoa, construa um algoritmo que calcule seu peso ideal,
+#usando a seguinte fórmula: (72.7*altura) - 58
+
+# Entradas
+print("Informe a altura da pessoa: ", end = "")
+altura = float(input())
+
+# Processamento
+peso_ideal = 72.7*altura - 58
+
+# Saídas
+print("O peso ideal para a altura ", altura,"m é ",'{:.2f}'.format(peso_ideal), "kg." )
+
+#'{:.0f}'.format(F)
