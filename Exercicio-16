@@ -1,0 +1,20 @@
+# Faça um programa para uma loja de tintas. O programa deverá pedir o tamanho em metros quadrados da área a ser pintada.
+# Considere que a cobertura da tinta é de 1 litro para cada 3 metros quadrados e que
+# a tinta é vendida em latas de 18 litros, que custam R$ 80,00.
+# Informe ao usuário a quantidades de latas de tinta a serem compradas e o preço total.
+
+# Funções a importar
+from math import ceil
+
+# Entradas
+print("Informe o tamanho em metros quadrados da área a ser pintada: ", end = "")
+area = float(input())
+
+# Processamento
+volume_necessario = area/3
+numero_latas_necessario = ceil(volume_necessario/18) # função ceil a divisão para o número inteiro seguinte
+custo = numero_latas_necessario * 80
+
+# Saídas
+print ("Quantidade de latas de tinta a serem compradas: ",numero_latas_necessario)
+print("Preço total: ", '{:.2f}'.format(custo))
