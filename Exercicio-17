@@ -1,0 +1,68 @@
+#Faça um Programa para uma loja de tintas. O programa deverá pedir o tamanho em metros quadrados da área a ser pintada.
+# Considere que a cobertura da tinta é de 1 litro para cada 6 metros quadrados e que a tinta é vendida
+# em latas de 18 litros, que custam R$ 80,00 ou em galões de 3,6 litros, que custam R$ 25,00.
+#Informe ao usuário as quantidades de tinta a serem compradas e os respectivos preços em 3 situações:
+#comprar apenas latas de 18 litros;
+#comprar apenas galões de 3,6 litros;
+#misturar latas e galões, de forma que o preço seja o menor.
+# Acrescente 10% de folga e sempre arredonde os valores para cima, isto é, considere latas cheias.
+
+# Funções a importar
+from math import ceil
+
+# Entradas
+print("Informe o tamanho em metros quadrados da área a ser pintada: ", end = "")
+area = float(input())
+
+# Processamento
+vt = area/6 * 1.1 # volume total necessario para cobrir a área, acrescido de 10%
+numero_latas_g = ceil(vt/18) # número máximo de latas grande necessárias para cobrir o volume total
+numero_latas_p = ceil(vt/3.6) # número máximo de latas pequenas necessárias para cobrir o volume total
+
+custo = [] # lista para armazenar os custos
+mlp = [] # lista para armazenar número de latas pequenas
+mlg = [] # lista para armazenar número de latas grandes
+
+# loop para avaliar todas as combinações de latas grandes (lg) e pequenas (lp)
+# necessárias para cobrir o volume total, desde lg = 1 até lg = numero_latas_g
+
+lg = 1
+for i in range (numero_latas_g):
+    vp = vt  - (18 * lg) # volume coberto por lp latas 3.6 L
+    if (vp < 0): vp = 18*lg
+
+    if (vp > vt ) : vp = 0 # volume residual
+
+    lp = ceil(vp/3.6)
+
+    custo.append(lg * 80 + lp * 25)
+    mlp.append(lp)
+    mlg.append(lg)
+    lg = lg + 1
+
+# loop para avaliar todas as combinações de latas grandes (lg) e pequenas (lp)
+# necessárias para cobrir o volume total, desde lp = 1 até lp = numero_latas_p
+lp = 1
+for i in range (numero_latas_p):
+    vp = vt  - (3.6 * lp) # volume coberto por lp latas 3.6 L
+    if (vp < 0): vp = 3.6*lp
+
+    if (vp > vt ) : vp = 0 # volume residual
+
+    lg = ceil(vp/18)
+
+    custo.append(lg * 80 + lp * 25)
+    mlp.append(lp)
+    mlg.append(lg)
+    lp = lp + 1
+
+custo_min = min(custo) # armazena o menor custo verificado dentre todas as combinações
+pos_custo_min = custo.index(custo_min) # armazena a posição do valor custo_min
+
+# Saídas
+print("Volume total: ",'{:.2f}'.format(vt))
+print("Comprando apenas latas 18L - Nº Latas: ",numero_latas_g,"Custo: ",'{:.2f}'.format(numero_latas_g*80))
+print("Comprando apenas latas 3.6L - Nº Latas: ",numero_latas_p,"Custo: ",'{:.2f}'.format(numero_latas_p*25))
+print("Opção menor custo - Nº Latas 18L: ",mlg[pos_custo_min]," Nº Latas 3.6L: ",mlp[pos_custo_min],"Custo: ",'{:.2f}'.format(custo_min))
+
+
