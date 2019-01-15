@@ -1,0 +1,16 @@
+#Faça um programa que peça o tamanho de um arquivo para download (em MB) e a velocidade de um link de Internet (em Mbps),
+#calcule e informe o tempo aproximado de download do arquivo usando este link (em minutos)
+
+# Entradas
+from math import ceil
+print("Informe o tamanho do arquivo para download (em MB): ", end = "")
+size = float(input())
+
+print("Informe a velocidade do link de Internet (em Mbps): ", end = "")
+speed = float(input())
+
+# processamento
+time_sec = (size / speed)/60
+
+#saídas
+print("Tempo aproximado para download (em minutos): ", '{:.1f}'.format((time_sec)))
